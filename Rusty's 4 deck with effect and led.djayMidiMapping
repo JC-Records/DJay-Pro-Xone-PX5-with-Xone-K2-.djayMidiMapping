@@ -1,0 +1,608 @@
+{
+    USBID = <*I586154008>;
+    controls = (
+	{
+	    keyPath = "mixer.crossfade";
+	    midiChannel = <*I15>;
+	    midiData = <*I4>;
+	    midiMessageType = <*I3>;
+	},
+	{
+	    keyPath = "mixer.externalLineVolume3";
+	    midiChannel = <*I15>;
+	    midiData = <*I0>;
+	    midiMessageType = <*I3>;
+	},
+	{
+	    keyPath = "mixer.externalLineVolume1";
+	    midiChannel = <*I15>;
+	    midiData = <*I1>;
+	    midiMessageType = <*I3>;
+	},
+	{
+	    keyPath = "mixer.externalLineVolume2";
+	    midiChannel = <*I15>;
+	    midiData = <*I2>;
+	    midiMessageType = <*I3>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "mixer.externalLineVolume4";
+	    midiChannel = <*I15>;
+	    midiData = <*I3>;
+	    midiMessageType = <*I3>;
+	    output = {
+		midiData = <*I59>;
+	    };
+	},
+	{
+	    keyPath = "turntable3.playPause";
+	    midiChannel = <*I14>;
+	    midiData = <*I36>;
+	    midiMessageType = <*I1>;
+	    output = {
+		midiData = <*I72>;
+	    };
+	},
+	{
+	    keyPath = "turntable1.playPause";
+	    midiChannel = <*I14>;
+	    midiData = <*I37>;
+	    midiMessageType = <*I1>;
+	    output = {
+		midiData = <*I109>;
+	    };
+	},
+	{
+	    keyPath = "turntable1.cuePositionOrJumpConsideringPlayState1";
+	    midiChannel = <*I14>;
+	    midiData = <*I33>;
+	    midiMessageType = <*I1>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "turntable1.bpmSync";
+	    midiChannel = <*I14>;
+	    midiData = <*I29>;
+	    midiMessageType = <*I1>;
+	    output = {
+		midiData = <*I65>;
+	    };
+	},
+	{
+	    keyPath = "musicLibrary.load1";
+	    midiChannel = <*I14>;
+	    midiData = <*I25>;
+	    midiMessageType = <*I1>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "turntable2.playPause";
+	    midiChannel = <*I14>;
+	    midiData = <*I38>;
+	    midiMessageType = <*I1>;
+	    output = {
+		midiData = <*I110>;
+	    };
+	},
+	{
+	    keyPath = "turntable2.cuePositionOrJumpConsideringPlayState1";
+	    midiChannel = <*I14>;
+	    midiData = <*I34>;
+	    midiMessageType = <*I1>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "turntable2.bpmSync";
+	    midiChannel = <*I14>;
+	    midiData = <*I30>;
+	    midiMessageType = <*I1>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "musicLibrary.load2";
+	    midiChannel = <*I14>;
+	    midiData = <*I26>;
+	    midiMessageType = <*I1>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "turntable3.cuePositionOrJumpConsideringPlayState1";
+	    midiChannel = <*I14>;
+	    midiData = <*I32>;
+	    midiMessageType = <*I1>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "turntable3.bpmSync";
+	    midiChannel = <*I14>;
+	    midiData = <*I28>;
+	    midiMessageType = <*I1>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "musicLibrary.load3";
+	    midiChannel = <*I14>;
+	    midiData = <*I24>;
+	    midiMessageType = <*I1>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "turntable4.playPause";
+	    midiChannel = <*I14>;
+	    midiData = <*I39>;
+	    midiMessageType = <*I1>;
+	    output = {
+		midiData = <*I75>;
+	    };
+	},
+	{
+	    keyPath = "turntable4.cuePositionOrJumpConsideringPlayState1";
+	    midiChannel = <*I14>;
+	    midiData = <*I35>;
+	    midiMessageType = <*I1>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "turntable4.bpmSync";
+	    midiChannel = <*I14>;
+	    midiData = <*I31>;
+	    midiMessageType = <*I1>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "musicLibrary.load4";
+	    midiChannel = <*I14>;
+	    midiData = <*I27>;
+	    midiMessageType = <*I1>;
+	    output = {
+		controlType = control;
+		flipped = <*BY>;
+	    };
+	},
+	{
+	    keyPath = "musicLibrary.toggleLibrarySource";
+	    midiChannel = <*I14>;
+	    midiData = <*I13>;
+	    midiMessageType = <*I1>;
+	    output = {
+	    };
+	},
+	{
+	    controlType = rotary;
+	    keyPath = "musicLibrary.libraryRotary";
+	    midiChannel = <*I14>;
+	    midiData = <*I20>;
+	    midiMessageType = <*I3>;
+	    output = {
+	    };
+	},
+	{
+	    controlType = rotary;
+	    keyPath = "musicLibrary.sectionRotary";
+	    midiChannel = <*I14>;
+	    midiData = <*I21>;
+	    midiMessageType = <*I3>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "musicLibrary.nextSource";
+	    midiChannel = <*I14>;
+	    midiData = <*I14>;
+	    midiMessageType = <*I1>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "musicLibrary.libraryBack";
+	    midiChannel = <*I14>;
+	    midiData = <*I12>;
+	    midiMessageType = <*I1>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "musicLibrary.focusQueue";
+	    midiChannel = <*I14>;
+	    midiData = <*I15>;
+	    midiMessageType = <*I1>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "turntable1.autoLoopOnOff";
+	    midiChannel = <*I14>;
+	    midiData = <*I53>;
+	    midiMessageType = <*I1>;
+	    output = {
+	    };
+	},
+	{
+	    controlType = rotary;
+	    keyPath = "turntable1.autoLoopDurationRotary";
+	    midiChannel = <*I14>;
+	    midiData = <*I1>;
+	    midiMessageType = <*I3>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "turntable2.autoLoopOnOff";
+	    midiChannel = <*I14>;
+	    midiData = <*I54>;
+	    midiMessageType = <*I1>;
+	    output = {
+	    };
+	},
+	{
+	    controlType = rotary;
+	    keyPath = "turntable2.autoLoopDurationRotary";
+	    midiChannel = <*I14>;
+	    midiData = <*I2>;
+	    midiMessageType = <*I3>;
+	},
+	{
+	    keyPath = "turntable3.autoLoopOnOff";
+	    midiChannel = <*I14>;
+	    midiData = <*I52>;
+	    midiMessageType = <*I1>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "turntable3.autoLoopDurationRotary";
+	    midiChannel = <*I14>;
+	    midiData = <*I0>;
+	    midiMessageType = <*I3>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "turntable4.autoLoopOnOff";
+	    midiChannel = <*I14>;
+	    midiData = <*I55>;
+	    midiMessageType = <*I1>;
+	    output = {
+	    };
+	},
+	{
+	    controlType = rotary;
+	    keyPath = "turntable4.autoLoopDurationRotary";
+	    midiChannel = <*I14>;
+	    midiData = <*I3>;
+	    midiMessageType = <*I3>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "turntable1.fx1Enabled";
+	    midiChannel = <*I14>;
+	    midiData = <*I41>;
+	    midiMessageType = <*I1>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "turntable1.fx1WetDryValue";
+	    midiChannel = <*I14>;
+	    midiData = <*I13>;
+	    midiMessageType = <*I3>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "turntable2.fx1Enabled";
+	    midiChannel = <*I14>;
+	    midiData = <*I42>;
+	    midiMessageType = <*I1>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "turntable2.fx1WetDryValue";
+	    midiChannel = <*I14>;
+	    midiData = <*I14>;
+	    midiMessageType = <*I3>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "turntable3.fx1Enabled";
+	    midiChannel = <*I14>;
+	    midiData = <*I40>;
+	    midiMessageType = <*I1>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "turntable3.fx1WetDryValue";
+	    midiChannel = <*I14>;
+	    midiData = <*I12>;
+	    midiMessageType = <*I3>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "turntable4.fx1Enabled";
+	    midiChannel = <*I14>;
+	    midiData = <*I43>;
+	    midiMessageType = <*I1>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "turntable4.fx1WetDryValue";
+	    midiChannel = <*I14>;
+	    midiData = <*I15>;
+	    midiMessageType = <*I3>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "turntable1.fx2Enabled";
+	    midiChannel = <*I14>;
+	    midiData = <*I45>;
+	    midiMessageType = <*I1>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "turntable1.fx2WetDryValue";
+	    midiChannel = <*I14>;
+	    midiData = <*I9>;
+	    midiMessageType = <*I3>;
+	},
+	{
+	    keyPath = "turntable1.fx3Enabled";
+	    midiChannel = <*I14>;
+	    midiData = <*I49>;
+	    midiMessageType = <*I1>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "turntable1.fx3WetDryValue";
+	    midiChannel = <*I14>;
+	    midiData = <*I5>;
+	    midiMessageType = <*I3>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "turntable2.fx2Enabled";
+	    midiChannel = <*I14>;
+	    midiData = <*I46>;
+	    midiMessageType = <*I1>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "turntable2.fx2WetDryValue";
+	    midiChannel = <*I14>;
+	    midiData = <*I10>;
+	    midiMessageType = <*I3>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "turntable2.fx3Enabled";
+	    midiChannel = <*I14>;
+	    midiData = <*I50>;
+	    midiMessageType = <*I1>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "turntable4.fx3WetDryValue";
+	    midiChannel = <*I14>;
+	    midiData = <*I7>;
+	    midiMessageType = <*I3>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "turntable3.fx2Enabled";
+	    midiChannel = <*I14>;
+	    midiData = <*I44>;
+	    midiMessageType = <*I1>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "turntable3.fx2WetDryValue";
+	    midiChannel = <*I14>;
+	    midiData = <*I8>;
+	    midiMessageType = <*I3>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "turntable3.fx3Enabled";
+	    midiChannel = <*I14>;
+	    midiData = <*I48>;
+	    midiMessageType = <*I1>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "turntable3.fx3WetDryValue";
+	    midiChannel = <*I14>;
+	    midiData = <*I4>;
+	    midiMessageType = <*I3>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "turntable4.fx2Enabled";
+	    midiChannel = <*I14>;
+	    midiData = <*I47>;
+	    midiMessageType = <*I1>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "turntable4.fx2WetDryValue";
+	    midiChannel = <*I14>;
+	    midiData = <*I11>;
+	    midiMessageType = <*I3>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "turntable4.fx3Enabled";
+	    midiChannel = <*I14>;
+	    midiData = <*I51>;
+	    midiMessageType = <*I1>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "turntable2.fx3WetDryValue";
+	    midiChannel = <*I14>;
+	    midiData = <*I6>;
+	    midiMessageType = <*I3>;
+	    output = {
+	    };
+	},
+	{
+	    keyPath = "turntable3.scrubbing";
+	    midiChannel = <*I14>;
+	    midiData = <*I16>;
+	    midiMessageType = <*I3>;
+	},
+	{
+	    keyPath = "turntable1.scrubbing";
+	    midiChannel = <*I14>;
+	    midiData = <*I17>;
+	    midiMessageType = <*I3>;
+	},
+	{
+	    keyPath = "turntable2.scrubbing";
+	    midiChannel = <*I14>;
+	    midiData = <*I18>;
+	    midiMessageType = <*I3>;
+	},
+	{
+	    keyPath = "turntable4.scrubbing";
+	    midiChannel = <*I14>;
+	    midiData = <*I19>;
+	    midiMessageType = <*I3>;
+	},
+	{
+	    keyPath = "musicLibrary.markUnmarkSelectedSongs";
+	    midiChannel = <*I15>;
+	    midiData = <*I10>;
+	    midiMessageType = <*I1>;
+	},
+	{
+	    keyPath = "musicLibrary.focusQueue";
+	    midiChannel = <*I15>;
+	    midiData = <*I16>;
+	    midiMessageType = <*I1>;
+	},
+	{
+	    controlType = rotary;
+	    keyPath = musicLibrary;
+	    midiChannel = <*I15>;
+	    midiData = <*I5>;
+	    midiMessageType = <*I3>;
+	},
+	{
+	    keyPath = musicLibrary;
+	    midiChannel = <*I15>;
+	    midiData = <*I9>;
+	    midiMessageType = <*I3>;
+	},
+	{
+	    keyPath = musicLibrary;
+	    midiChannel = <*I15>;
+	    midiData = <*I17>;
+	    midiMessageType = <*I1>;
+	},
+	{
+	    keyPath = musicLibrary;
+	    midiChannel = <*I15>;
+	    midiData = <*I18>;
+	    midiMessageType = <*I1>;
+	},
+	{
+	    keyPath = musicLibrary;
+	    midiChannel = <*I15>;
+	    midiData = <*I19>;
+	    midiMessageType = <*I1>;
+	},
+	{
+	    keyPath = musicLibrary;
+	    midiChannel = <*I15>;
+	    midiData = <*I11>;
+	    midiMessageType = <*I3>;
+	},
+	{
+	    keyPath = musicLibrary;
+	    midiChannel = <*I15>;
+	    midiData = <*I11>;
+	    midiMessageType = <*I1>;
+	},
+	{
+	    keyPath = musicLibrary;
+	    midiChannel = <*I15>;
+	    midiData = <*I14>;
+	    midiMessageType = <*I1>;
+	},
+	{
+	    keyPath = musicLibrary;
+	    midiChannel = <*I15>;
+	    midiData = <*I24>;
+	    midiMessageType = <*I1>;
+	},
+	{
+	    keyPath = musicLibrary;
+	    midiChannel = <*I15>;
+	    midiData = <*I12>;
+	    midiMessageType = <*I1>;
+	},
+	{
+	    keyPath = musicLibrary;
+	    midiChannel = <*I15>;
+	    midiData = <*I20>;
+	    midiMessageType = <*I1>;
+	},
+	{
+	    keyPath = musicLibrary;
+	    midiChannel = <*I15>;
+	    midiData = <*I13>;
+	    midiMessageType = <*I1>;
+	},
+	{
+	    keyPath = musicLibrary;
+	    midiChannel = <*I15>;
+	    midiData = <*I28>;
+	    midiMessageType = <*I1>;
+	},
+	{
+	    keyPath = musicLibrary;
+	    midiChannel = <*I15>;
+	    midiData = <*I7>;
+	    midiMessageType = <*I3>;
+	}
+    );
+    customClassName = AllenHeathXonePX5;
+    editor = "(null)-5.4.3";
+    endpointName = "XONE:PX5";
+    schemeVersion = <*I1>;
+    supportWebsite = "https://www.allen-heath.com/support/";
+    uuid = "90E13B62-5065-4777-A44E-9BAC0A33883F";
+    version = <*I2>;
+}
