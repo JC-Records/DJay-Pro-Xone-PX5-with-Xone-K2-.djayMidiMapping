@@ -1,10 +1,10 @@
-# DJay-Pro-Xone-PX5-with-Xone-K2-.djayMidiMapping
-# Midi Maps For DJay Pro
 {
     USBID = <*I586154008>;
     controls = (
 
-        
+        #################################################
+        # PX5 MIXER CONTROLS (ORIGINAL)
+        #################################################
         {
             keyPath = "mixer.crossfade";
             midiChannel = <*I15>;
@@ -36,6 +36,13 @@
             midiMessageType = <*I3>;
             output = { midiData = <*I59>; };
         },
+
+        #################################################
+        # PLAY / PAUSE BUTTONS (4 DECKS) — fixed LED states
+        # Solid green = playing
+        # Flashing orange = track loaded, not playing
+        # Flashing red = no track
+        #################################################
         {
             keyPath = "turntable1.playPause";
             midiChannel = <*I14>;
@@ -44,9 +51,9 @@
             output = {
                 midiData = <*I37>;
                 states = (
-                    { condition = "playing"; value = <*I5>; },              
-                    { condition = "trackLoaded"; values = (<*I1>, <*I0>); },
-                    { condition = "noTrack"; values = (<*I3>, <*I0>); }     
+                    { condition = "playing"; value = <*I5>; },
+                    { condition = "trackLoaded"; value = <*I3>; blink = true; },
+                    { condition = "noTrack"; value = <*I1>; blink = true; }
                 );
             };
         },
@@ -59,8 +66,8 @@
                 midiData = <*I38>;
                 states = (
                     { condition = "playing"; value = <*I5>; },
-                    { condition = "trackLoaded"; values = (<*I1>, <*I0>); },
-                    { condition = "noTrack"; values = (<*I3>, <*I0>); }
+                    { condition = "trackLoaded"; value = <*I3>; blink = true; },
+                    { condition = "noTrack"; value = <*I1>; blink = true; }
                 );
             };
         },
@@ -73,8 +80,8 @@
                 midiData = <*I36>;
                 states = (
                     { condition = "playing"; value = <*I5>; },
-                    { condition = "trackLoaded"; values = (<*I1>, <*I0>); },
-                    { condition = "noTrack"; values = (<*I3>, <*I0>); }
+                    { condition = "trackLoaded"; value = <*I3>; blink = true; },
+                    { condition = "noTrack"; value = <*I1>; blink = true; }
                 );
             };
         },
@@ -87,11 +94,18 @@
                 midiData = <*I39>;
                 states = (
                     { condition = "playing"; value = <*I5>; },
-                    { condition = "trackLoaded"; values = (<*I1>, <*I0>); },
-                    { condition = "noTrack"; values = (<*I3>, <*I0>); }
+                    { condition = "trackLoaded"; value = <*I3>; blink = true; },
+                    { condition = "noTrack"; value = <*I1>; blink = true; }
                 );
             };
         },
+
+        #################################################
+        # CUE BUTTONS (4 DECKS) — simplified LED logic
+        # Orange = loaded not cued
+        # Red = cued
+        # Flashing green = cue play
+        #################################################
         {
             keyPath = "turntable1.cuePositionOrJumpConsideringPlayState1";
             midiChannel = <*I14>;
@@ -100,9 +114,9 @@
             output = {
                 midiData = <*I33>;
                 states = (
-                    { condition = "loadedNotCued"; values = (<*I1>, <*I0>); }, 
-                    { condition = "cued"; value = <*I3>; },                   
-                    { condition = "cuePlay"; values = (<*I5>, <*I0>); }       
+                    { condition = "loadedNotCued"; value = <*I3>; },
+                    { condition = "cued"; value = <*I1>; },
+                    { condition = "cuePlay"; value = <*I5>; blink = true; }
                 );
             };
         },
@@ -114,9 +128,9 @@
             output = {
                 midiData = <*I34>;
                 states = (
-                    { condition = "loadedNotCued"; values = (<*I1>, <*I0>); },
-                    { condition = "cued"; value = <*I3>; },
-                    { condition = "cuePlay"; values = (<*I5>, <*I0>); }
+                    { condition = "loadedNotCued"; value = <*I3>; },
+                    { condition = "cued"; value = <*I1>; },
+                    { condition = "cuePlay"; value = <*I5>; blink = true; }
                 );
             };
         },
@@ -128,9 +142,9 @@
             output = {
                 midiData = <*I32>;
                 states = (
-                    { condition = "loadedNotCued"; values = (<*I1>, <*I0>); },
-                    { condition = "cued"; value = <*I3>; },
-                    { condition = "cuePlay"; values = (<*I5>, <*I0>); }
+                    { condition = "loadedNotCued"; value = <*I3>; },
+                    { condition = "cued"; value = <*I1>; },
+                    { condition = "cuePlay"; value = <*I5>; blink = true; }
                 );
             };
         },
@@ -142,12 +156,16 @@
             output = {
                 midiData = <*I35>;
                 states = (
-                    { condition = "loadedNotCued"; values = (<*I1>, <*I0>); },
-                    { condition = "cued"; value = <*I3>; },
-                    { condition = "cuePlay"; values = (<*I5>, <*I0>); }
+                    { condition = "loadedNotCued"; value = <*I3>; },
+                    { condition = "cued"; value = <*I1>; },
+                    { condition = "cuePlay"; value = <*I5>; blink = true; }
                 );
             };
         },
+
+        #################################################
+        # BPM SYNC (4 DECKS) — solid green when synced
+        #################################################
         {
             keyPath = "turntable1.bpmSync";
             midiChannel = <*I14>;
@@ -156,8 +174,8 @@
             output = {
                 midiData = <*I29>;
                 states = (
-                    { condition = "synced"; value = <*I1>; },             
-                    { condition = "notSynced"; values = (<*I3>, <*I0>); }  
+                    { condition = "synced"; value = <*I5>; },
+                    { condition = "notSynced"; value = <*I1>; }
                 );
             };
         },
@@ -169,8 +187,8 @@
             output = {
                 midiData = <*I30>;
                 states = (
-                    { condition = "synced"; value = <*I1>; },
-                    { condition = "notSynced"; values = (<*I3>, <*I0>); }
+                    { condition = "synced"; value = <*I5>; },
+                    { condition = "notSynced"; value = <*I1>; }
                 );
             };
         },
@@ -182,8 +200,8 @@
             output = {
                 midiData = <*I28>;
                 states = (
-                    { condition = "synced"; value = <*I1>; },
-                    { condition = "notSynced"; values = (<*I3>, <*I0>); }
+                    { condition = "synced"; value = <*I5>; },
+                    { condition = "notSynced"; value = <*I1>; }
                 );
             };
         },
@@ -195,63 +213,15 @@
             output = {
                 midiData = <*I31>;
                 states = (
-                    { condition = "synced"; value = <*I1>; },
-                    { condition = "notSynced"; values = (<*I3>, <*I0>); }
+                    { condition = "synced"; value = <*I5>; },
+                    { condition = "notSynced"; value = <*I1>; }
                 );
             };
         },
-        {
-            keyPath = "musicLibrary.load1";
-            midiChannel = <*I14>;
-            midiData = <*I25>;
-            midiMessageType = <*I1>;
-            output = {
-                midiData = <*I25>;
-                states = (
-                    { condition = "noTrack"; values = (<*I1>, <*I0>); },  
-                    { condition = "trackLoaded"; value = <*I3>; }        
-                );
-            };
-        },
-        {
-            keyPath = "musicLibrary.load2";
-            midiChannel = <*I14>;
-            midiData = <*I26>;
-            midiMessageType = <*I1>;
-            output = {
-                midiData = <*I26>;
-                states = (
-                    { condition = "noTrack"; values = (<*I1>, <*I0>); },
-                    { condition = "trackLoaded"; value = <*I3>; }
-                );
-            };
-        },
-        {
-            keyPath = "musicLibrary.load3";
-            midiChannel = <*I14>;
-            midiData = <*I24>;
-            midiMessageType = <*I1>;
-            output = {
-                midiData = <*I24>;
-                states = (
-                    { condition = "noTrack"; values = (<*I1>, <*I0>); },
-                    { condition = "trackLoaded"; value = <*I3>; }
-                );
-            };
-        },
-        {
-            keyPath = "musicLibrary.load4";
-            midiChannel = <*I14>;
-            midiData = <*I27>;
-            midiMessageType = <*I1>;
-            output = {
-                midiData = <*I27>;
-                states = (
-                    { condition = "noTrack"; values = (<*I1>, <*I0>); },
-                    { condition = "trackLoaded"; value = <*I3>; }
-                );
-            };
-        },
+
+        #################################################
+        # AUTO LOOP (4 DECKS) — simple state colors
+        #################################################
         {
             keyPath = "turntable1.autoLoopOnOff";
             midiChannel = <*I14>;
@@ -260,10 +230,10 @@
             output = {
                 midiData = <*I53>;
                 states = (
-                    { condition = "loop4"; value = <*I5>; },             
-                    { condition = "loop8"; value = <*I3>; },              
-                    { condition = "loop16"; value = <*I1>; },             
-                    { condition = "noLoop"; values = (<*I7>, <*I0>); }   
+                    { condition = "loop4"; value = <*I5>; },
+                    { condition = "loop8"; value = <*I3>; },
+                    { condition = "loop16"; value = <*I1>; },
+                    { condition = "noLoop"; value = <*I7>; }
                 );
             };
         },
@@ -278,7 +248,7 @@
                     { condition = "loop4"; value = <*I5>; },
                     { condition = "loop8"; value = <*I3>; },
                     { condition = "loop16"; value = <*I1>; },
-                    { condition = "noLoop"; values = (<*I7>, <*I0>); }
+                    { condition = "noLoop"; value = <*I7>; }
                 );
             };
         },
@@ -293,7 +263,7 @@
                     { condition = "loop4"; value = <*I5>; },
                     { condition = "loop8"; value = <*I3>; },
                     { condition = "loop16"; value = <*I1>; },
-                    { condition = "noLoop"; values = (<*I7>, <*I0>); }
+                    { condition = "noLoop"; value = <*I7>; }
                 );
             };
         },
@@ -308,10 +278,14 @@
                     { condition = "loop4"; value = <*I5>; },
                     { condition = "loop8"; value = <*I3>; },
                     { condition = "loop16"; value = <*I1>; },
-                    { condition = "noLoop"; values = (<*I7>, <*I0>); }
+                    { condition = "noLoop"; value = <*I7>; }
                 );
             };
         },
+
+        #################################################
+        # FX BUTTONS (4 DECKS x 3) — white on, red off
+        #################################################
         {
             keyPath = "turntable1.fx1Enabled";
             midiChannel = <*I14>;
@@ -320,10 +294,8 @@
             output = {
                 midiData = <*I41>;
                 states = (
-                    { condition = "fxOnDry"; value = <*I7>; },              
-                    { condition = "fxWetLow"; values = (<*I5>, <*I0>); },   
-                    { condition = "fxWetMid"; values = (<*I3>, <*I0>); },  
-                    { condition = "fxWetHigh"; values = (<*I1>, <*I0>); }  
+                    { condition = "fxOn"; value = <*I7>; },
+                    { condition = "fxOff"; value = <*I1>; }
                 );
             };
         },
@@ -335,10 +307,8 @@
             output = {
                 midiData = <*I45>;
                 states = (
-                    { condition = "fxOnDry"; value = <*I7>; },
-                    { condition = "fxWetLow"; values = (<*I5>, <*I0>); },
-                    { condition = "fxWetMid"; values = (<*I3>, <*I0>); },
-                    { condition = "fxWetHigh"; values = (<*I1>, <*I0>); }
+                    { condition = "fxOn"; value = <*I7>; },
+                    { condition = "fxOff"; value = <*I1>; }
                 );
             };
         },
@@ -350,10 +320,8 @@
             output = {
                 midiData = <*I49>;
                 states = (
-                    { condition = "fxOnDry"; value = <*I7>; },
-                    { condition = "fxWetLow"; values = (<*I5>, <*I0>); },
-                    { condition = "fxWetMid"; values = (<*I3>, <*I0>); },
-                    { condition = "fxWetHigh"; values = (<*I1>, <*I0>); }
+                    { condition = "fxOn"; value = <*I7>; },
+                    { condition = "fxOff"; value = <*I1>; }
                 );
             };
         },
@@ -366,10 +334,8 @@
             output = {
                 midiData = <*I42>;
                 states = (
-                    { condition = "fxOnDry"; value = <*I7>; },
-                    { condition = "fxWetLow"; values = (<*I5>, <*I0>); },
-                    { condition = "fxWetMid"; values = (<*I3>, <*I0>); },
-                    { condition = "fxWetHigh"; values = (<*I1>, <*I0>); }
+                    { condition = "fxOn"; value = <*I7>; },
+                    { condition = "fxOff"; value = <*I1>; }
                 );
             };
         },
@@ -381,10 +347,8 @@
             output = {
                 midiData = <*I46>;
                 states = (
-                    { condition = "fxOnDry"; value = <*I7>; },
-                    { condition = "fxWetLow"; values = (<*I5>, <*I0>); },
-                    { condition = "fxWetMid"; values = (<*I3>, <*I0>); },
-                    { condition = "fxWetHigh"; values = (<*I1>, <*I0>); }
+                    { condition = "fxOn"; value = <*I7>; },
+                    { condition = "fxOff"; value = <*I1>; }
                 );
             };
         },
@@ -396,10 +360,8 @@
             output = {
                 midiData = <*I50>;
                 states = (
-                    { condition = "fxOnDry"; value = <*I7>; },
-                    { condition = "fxWetLow"; values = (<*I5>, <*I0>); },
-                    { condition = "fxWetMid"; values = (<*I3>, <*I0>); },
-                    { condition = "fxWetHigh"; values = (<*I1>, <*I0>); }
+                    { condition = "fxOn"; value = <*I7>; },
+                    { condition = "fxOff"; value = <*I1>; }
                 );
             };
         },
@@ -412,10 +374,8 @@
             output = {
                 midiData = <*I40>;
                 states = (
-                    { condition = "fxOnDry"; value = <*I7>; },
-                    { condition = "fxWetLow"; values = (<*I5>, <*I0>); },
-                    { condition = "fxWetMid"; values = (<*I3>, <*I0>); },
-                    { condition = "fxWetHigh"; values = (<*I1>, <*I0>); }
+                    { condition = "fxOn"; value = <*I7>; },
+                    { condition = "fxOff"; value = <*I1>; }
                 );
             };
         },
@@ -427,10 +387,8 @@
             output = {
                 midiData = <*I44>;
                 states = (
-                    { condition = "fxOnDry"; value = <*I7>; },
-                    { condition = "fxWetLow"; values = (<*I5>, <*I0>); },
-                    { condition = "fxWetMid"; values = (<*I3>, <*I0>); },
-                    { condition = "fxWetHigh"; values = (<*I1>, <*I0>); }
+                    { condition = "fxOn"; value = <*I7>; },
+                    { condition = "fxOff"; value = <*I1>; }
                 );
             };
         },
@@ -442,10 +400,8 @@
             output = {
                 midiData = <*I48>;
                 states = (
-                    { condition = "fxOnDry"; value = <*I7>; },
-                    { condition = "fxWetLow"; values = (<*I5>, <*I0>); },
-                    { condition = "fxWetMid"; values = (<*I3>, <*I0>); },
-                    { condition = "fxWetHigh"; values = (<*I1>, <*I0>); }
+                    { condition = "fxOn"; value = <*I7>; },
+                    { condition = "fxOff"; value = <*I1>; }
                 );
             };
         },
@@ -458,10 +414,8 @@
             output = {
                 midiData = <*I43>;
                 states = (
-                    { condition = "fxOnDry"; value = <*I7>; },
-                    { condition = "fxWetLow"; values = (<*I5>, <*I0>); },
-                    { condition = "fxWetMid"; values = (<*I3>, <*I0>); },
-                    { condition = "fxWetHigh"; values = (<*I1>, <*I0>); }
+                    { condition = "fxOn"; value = <*I7>; },
+                    { condition = "fxOff"; value = <*I1>; }
                 );
             };
         },
@@ -473,10 +427,8 @@
             output = {
                 midiData = <*I47>;
                 states = (
-                    { condition = "fxOnDry"; value = <*I7>; },
-                    { condition = "fxWetLow"; values = (<*I5>, <*I0>); },
-                    { condition = "fxWetMid"; values = (<*I3>, <*I0>); },
-                    { condition = "fxWetHigh"; values = (<*I1>, <*I0>); }
+                    { condition = "fxOn"; value = <*I7>; },
+                    { condition = "fxOff"; value = <*I1>; }
                 );
             };
         },
@@ -488,13 +440,67 @@
             output = {
                 midiData = <*I51>;
                 states = (
-                    { condition = "fxOnDry"; value = <*I7>; },
-                    { condition = "fxWetLow"; values = (<*I5>, <*I0>); },
-                    { condition = "fxWetMid"; values = (<*I3>, <*I0>); },
-                    { condition = "fxWetHigh"; values = (<*I1>, <*I0>); }
+                    { condition = "fxOn"; value = <*I7>; },
+                    { condition = "fxOff"; value = <*I1>; }
                 );
             };
-        }
+        },
+
+        #################################################
+        # LIBRARY CONTROLS — simplified states
+        #################################################
+        {
+            keyPath = "musicLibrary.load1";
+            midiChannel = <*I14>;
+            midiData = <*I25>;
+            midiMessageType = <*I1>;
+            output = {
+                midiData = <*I25>;
+                states = (
+                    { condition = "noTrack"; value = <*I1>; },
+                    { condition = "trackLoaded"; value = <*I3>; }
+                );
+            };
+        },
+        {
+            keyPath = "musicLibrary.load2";
+            midiChannel = <*I14>;
+            midiData = <*I26>;
+            midiMessageType = <*I1>;
+            output = {
+                midiData = <*I26>;
+                states = (
+                    { condition = "noTrack"; value = <*I1>; },
+                    { condition = "trackLoaded"; value = <*I3>; }
+                );
+            };
+        },
+        {
+            keyPath = "musicLibrary.load3";
+            midiChannel = <*I14>;
+            midiData = <*I24>;
+            midiMessageType = <*I1>;
+            output = {
+                midiData = <*I24>;
+                states = (
+                    { condition = "noTrack"; value = <*I1>; },
+                    { condition = "trackLoaded"; value = <*I3>; }
+                );
+            };
+        },
+        {
+            keyPath = "musicLibrary.load4";
+            midiChannel = <*I14>;
+            midiData = <*I27>;
+            midiMessageType = <*I1>;
+            output = {
+                midiData = <*I27>;
+                states = (
+                    { condition = "noTrack"; value = <*I1>; },
+                    { condition = "trackLoaded"; value = <*I3>; }
+                );
+            };
+        },
         {
             keyPath = "musicLibrary.toggleLibrarySource";
             midiChannel = <*I14>;
@@ -503,8 +509,8 @@
             output = {
                 midiData = <*I13>;
                 states = (
-                    { condition = "playlistView"; value = <*I3>; },  
-                    { condition = "songView"; value = <*I1>; }        
+                    { condition = "playlistView"; value = <*I3>; },
+                    { condition = "songView"; value = <*I1>; }
                 );
             };
         },
@@ -516,8 +522,8 @@
             output = {
                 midiData = <*I12>;
                 states = (
-                    { condition = "atRoot"; values = (<*I1>, <*I0>); }, 
-                    { condition = "canGoBack"; value = <*I5>; }        
+                    { condition = "atRoot"; value = <*I1>; },
+                    { condition = "canGoBack"; value = <*I5>; }
                 );
             };
         },
@@ -529,8 +535,8 @@
             output = {
                 midiData = <*I14>;
                 states = (
-                    { condition = "cycling"; values = (<*I3>, <*I0>); }, 
-                    { condition = "idle"; value = <*I0>; }               
+                    { condition = "active"; value = <*I3>; },
+                    { condition = "inactive"; value = <*I0>; }
                 );
             };
         },
@@ -542,12 +548,12 @@
             output = {
                 midiData = <*I15>;
                 states = (
-                    { condition = "queueActive"; value = <*I7>; },       
-                    { condition = "libraryActive"; value = <*I0>; }     
+                    { condition = "queueActive"; value = <*I7>; },
+                    { condition = "libraryActive"; value = <*I0>; }
                 );
             };
         }
-    );  
+    );
     customClassName = AllenHeathXonePX5;
     editor = "(null)-5.4.3";
     endpointName = "XONE:PX5";
