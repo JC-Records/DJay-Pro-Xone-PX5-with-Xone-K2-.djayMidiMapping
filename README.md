@@ -6,7 +6,7 @@
 
 
 
-{
+    {
     USBID = <*I586154008>;
     controls = (
 
@@ -569,4 +569,4 @@
     supportWebsite = "https://www.allen-heath.com/support/";
     uuid = "90E13B62-5065-4777-A44E-9BAC0A33883F";
     version = <*I2>;
-}
+    }
